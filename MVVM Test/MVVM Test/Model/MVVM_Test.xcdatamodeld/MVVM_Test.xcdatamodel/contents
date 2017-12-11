@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="13772" systemVersion="17C88" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Request" representedClassName="Request" syncable="YES">
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="results" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Result" inverseName="request" inverseEntity="Result" syncable="YES"/>
+    </entity>
+    <entity name="Result" representedClassName="Result" syncable="YES">
+        <attribute name="descr" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="path" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="stars" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="title" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="request" maxCount="1" deletionRule="Nullify" destinationEntity="Request" inverseName="results" inverseEntity="Request" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Request" positionX="-63" positionY="-18" width="128" height="90"/>
+        <element name="Result" positionX="-54" positionY="9" width="128" height="120"/>
+    </elements>
+</model>
